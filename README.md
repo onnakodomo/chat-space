@@ -15,7 +15,8 @@
 ```
 
 <br>
-# groupsテーブル
+
+# groups_usersテーブル
 |Column|Type|Option|
 |------|----|------|
 |name|text|null: false, unique: true|
@@ -40,6 +41,7 @@
 - belongs_to :user
 ```
 <br>
+
 # usersテーブル
 |Column|Type|Option|
 |------|----|------|

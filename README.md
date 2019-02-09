@@ -41,7 +41,6 @@
 - belongs_to :user
 ```
 <br>
-
 # usersテーブル
 |Column|Type|Option|
 |------|----|------|

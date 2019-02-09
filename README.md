@@ -21,6 +21,7 @@
 |------|----|------|
 |name|text|null: false, unique: true|
 
+
 ### Association
 ```Ruby:group.rb
 - has_many :messages

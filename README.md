@@ -21,7 +21,6 @@
 |------|----|------|
 |name|text|null: false, unique: true|
 
-
 ### Association
 ```Ruby:group.rb
 - has_many :messages
@@ -41,7 +40,8 @@
 - belongs_to :group
 - belongs_to :user
 ```
-<br>
+
+
 # usersテーブル
 |Column|Type|Option|
 |------|----|------|

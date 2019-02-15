@@ -5,8 +5,8 @@
 |------|----|-------|
 |body|text||
 |image|text||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 ```Ruby:message.rb
@@ -32,8 +32,8 @@
 # groups_usersテーブル
 |Column|Type|Option|
 |------|----|------|
-|user_id|integer|null: false, foreign_key: true, index: true|
-|group_id|integer|null: false, foreign_key: true, index: true|
+|user_id|references|null: false, foreign_key: true, index: true|
+|group_id|references|null: false, foreign_key: true, index: true|
 
 ### Association
 ```Ruby:groups_user.rb

@@ -16,7 +16,7 @@
 
 <br>
 
-# groups_usersテーブル
+# groupsテーブル
 |Column|Type|Option|
 |------|----|------|
 |name|text|null: false, unique: true|
@@ -45,7 +45,7 @@
 # usersテーブル
 |Column|Type|Option|
 |------|----|------|
-|nickname|text|null: false, unique: true|
+|nickname|text|null: false, unique: true,index: true|
 |email|string|null: false, unique: true|
 
 ### Association

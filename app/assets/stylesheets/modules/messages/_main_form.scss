@@ -5,26 +5,26 @@
   #new_message.new_message {
     height: 50px;
     display: flex;
-    .input_box {
+    .input-box {
       height: 50px;
       width: 100%;
       background-color: $main__form__input-box--background-color;
       float: left;
       position: relative;
-      .input-box__text {
+      &__text {
         height: 50px;
         width: 100%;
         border-style: none;
         padding: 0 40px 0 10px;
       }
-      .input-box__image {
+      &__image {
         position: absolute;
         top: 10px;
         right: 10px;
         font-size: 1.3rem;
-      }
-      .input-box__image__file {
-        display: none;
+        .input-box__image__file {
+          display: none;
+        }
       }
     }
     .submit_btn {

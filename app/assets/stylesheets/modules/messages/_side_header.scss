@@ -5,24 +5,25 @@
   font-size: 16px;
   font-weight: bold;
   color: $side__font-color;
-  .side-header__box {
+  &__box {
       line-height: 100px;
       display: flex;
       justify-content: space-between;
-      .side-header__box__user-name {
+      &__user-name {
         align-items: center;
       }
-      .side-header__box__menu {
+      &__menu {
           display: flex;
           text-decoration: none;
-          .side-header__box__menu__edit-user {
+          &__edit-user {
               margin-left: 3px;
               color: $side__font-color;
           }
-          .side-header__box__menu__new-group {
+          &__new-group {
               margin-left: 3px;
               color: $side__font-color;
           }
       }
   }
 }
+

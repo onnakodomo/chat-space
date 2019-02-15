@@ -1,0 +1,29 @@
+.side-header {
+  height: 100px;
+  background-color: $side__header__background-color;
+  padding: 0 20px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: $side__font-color;
+  &__box {
+      line-height: 100px;
+      display: flex;
+      justify-content: space-between;
+      &__user-name {
+        align-items: center;
+      }
+      &__menu {
+          display: flex;
+          text-decoration: none;
+          &__edit-user {
+              margin-left: 3px;
+              color: $side__font-color;
+          }
+          &__new-group {
+              margin-left: 3px;
+              color: $side__font-color;
+          }
+      }
+  }
+}
+

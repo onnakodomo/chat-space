@@ -1,0 +1,28 @@
+.messages {
+  height: calc( 100% - 190px);
+  padding: 46px 40px;
+  .message {
+    margin-bottom: 40px;
+      &__upper-info {
+        display: flex;
+        margin-bottom: 10px;
+        &__talker {
+          font-size: 16px;
+          font-weight: bold;
+          color: $main__message-color;
+          margin-right: 10px;
+        }
+        &__date {
+          font-size: 12px;
+          color: $main__message__date-color;
+        }
+      }
+      &__text {
+        font-size: 14px;
+        color: $main__message-color;
+      }
+  }
+}
+
+
+

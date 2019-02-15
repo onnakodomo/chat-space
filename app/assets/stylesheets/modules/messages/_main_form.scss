@@ -1,0 +1,42 @@
+.form {
+  height: 90px;
+  padding: 20px 40px;
+  background-color: $main__form--background-color;
+  #new_message.new_message {
+    height: 50px;
+    display: flex;
+    .input-box {
+      height: 50px;
+      width: 100%;
+      background-color: $main__form__input-box--background-color;
+      float: left;
+      position: relative;
+      &__text {
+        height: 50px;
+        width: 100%;
+        border-style: none;
+        padding: 0 40px 0 10px;
+      }
+      &__image {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.3rem;
+        .input-box__image__file {
+          display: none;
+        }
+      }
+    }
+    .submit_btn {
+      height: 50px;
+      width: 100px;
+      background-color: $btn-color;
+      border: none;
+      float: right;
+      margin-left: 15px;
+      color: $main__form__btn--font-color;
+      padding: 0 30px;
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.groups {
+  height: calc(100% - 90px);
+  background-color: $side__groups__background-color;
+  padding: 20px 20px 0;
+  .group {
+    color: $side__font-color;
+    margin-bottom: 40px;
+  }
+    .group__group-name {
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    .group__latest-message {
+      font-size: 11px;
+    }
+}
+
+
+

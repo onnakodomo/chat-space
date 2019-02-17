@@ -1,10 +1,13 @@
 .side-header
   .side-header__box
-    %p.side-header__box__user-name hayashimasahiro
+    %p.side-header__box__user-name
+      =current_user.name
     %ul.side-header__box__menu
       =link_to "" do
-        %li.side-header__box__menu__edit-user
-          =fa_icon "edit"
-      =link_to "" do
         %li.side-header__box__menu__new-group
+          =fa_icon "edit"
+      =link_to "/users/#{current_user.id}/edit" do
+        %li.side-header__box__menu__edit-user
           =fa_icon "cog"
+
+

@@ -1,0 +1,55 @@
+.chat-group-form {
+  width: 980px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: $group__new__edit__background-color;
+  border: 1px solid $group__new__edit__border-color;
+  border-radius: 5px;
+  box-sizing: border-box;
+  h1 {
+    letter-spacing: 2px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__field {
+    margin-top: 30px;
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+    &--left {
+      float: left;
+      width: 30%;
+      padding-right: 20px;
+      padding-left: 20px;
+      box-sizing: border-box;
+    }
+    &--right {
+      float: right;
+      width: 70%;
+    }
+    &__label {
+      display: block;
+      line-height: 50px;
+      font-weight: bold;
+      text-align: right;
+    }
+    &__input {
+      float: left;
+      width: 100%;
+      line-height: 30px;
+      padding: 10px 15px;
+      box-sizing: border-box;
+    }
+  }
+
+  &__action-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    color: $group__form__btn--font-color;
+    background-color: $btn-color;
+    border: 0;
+  }
+}

@@ -1,12 +1,23 @@
 @import "./configs/reset";
 @import "./configs/variable";
 @import "font-awesome";
-@import "./messages";
-@import "./user";
-@import "./modules/flashs/flash";
-@import "./modules/messages/side_header";
-@import "./modules/messages/side_groups";
-@import "./modules/messages/main_header";
-@import "./modules/messages/main_messages";
-@import "./modules/messages/main_form";
+
+@import "./modules/body/body";
+@import "./modules/body/side_header";
+@import "./modules/body/side_contents";
+@import "./modules/body/main_header";
+@import "./modules/body/main_contents";
+@import "./modules/body/main_footer";
+
+@import "./modules/error/chat_group_form_error";
+@import "./modules/error/error_user";
+@import "./modules/error/field_with_error";
+
+@import "./modules/flash/flash";
+
+@import "./modules/group/new_edit";
+
+@import "./modules/user/account";
+@import "./modules/user/account_left";
+@import "./modules/user/account_right";
 

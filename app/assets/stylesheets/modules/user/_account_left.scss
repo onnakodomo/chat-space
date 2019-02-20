@@ -1,0 +1,29 @@
+.account-page__header {
+  h2 {
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    font-size: 40px;
+    font-weight: 200;
+
+    &:after {
+      content: '';
+      display: block;
+      width:  85px;
+      margin-top: 5px;
+      border-bottom: 1px solid $btn-color;
+    }
+  }
+
+  h5 {
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 200;
+  }
+
+  .btn {
+    margin-top: 20px;
+    color: $account__btn-color;
+    background-color: $account__btn__background-color;
+    font-size: 14px;
+  }
+}

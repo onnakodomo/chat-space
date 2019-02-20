@@ -1,0 +1,37 @@
+.account-page {
+  &__inner {
+    width: 980px;
+    margin: 60px auto;
+    padding: 60px;
+    background-color: $account__background-color;
+    border: 1px solid $account__border-color;
+    border-radius: 5px;
+
+    &--left, &--right {
+      float: left;
+      width: 50%;
+    }
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    height: 50px;
+    padding: 0 30px;
+    line-height: 50px;
+    letter-spacing: 1px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+  }
+  input[type='submit'] {
+    float: left;
+    margin-top: 20px;
+    color: $account__btn-color;
+    background-color: $btn-color;
+  }
+}

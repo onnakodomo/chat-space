@@ -1,19 +1,19 @@
 .groups {
-  height: calc(100% - 90px);
+  height: calc(100vw - 100px);
   background-color: $side__groups__background-color;
-  padding: 20px 20px 0;
+  padding: 0 20px;
   .group {
+    box-sizing: border-box;
     color: $side__font-color;
-    margin-bottom: 40px;
-  }
+
+    padding: 20px 0 40px;
     &__group-name {
       font-size: 15px;
       margin-bottom: 5px;
     }
     &__latest-message {
-      font-size: 11px;
+      font-size: 12px;
+      margin-top: 5px;
     }
+  }
 }
-
-
-

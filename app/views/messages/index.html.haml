@@ -6,4 +6,4 @@
   .chat-main
     = render partial: "body/main_header", locals: { group: @group, messages: @messages }
     = render partial: "body/main_messages", locals: { messages: @messages }
-    = render partial: "body/main_form", locals: { message: @message }
+    = render partial: "body/main_form", locals: { message: @message , group: @group}

@@ -1,8 +1,10 @@
 .messages {
   height: calc( 100% - 190px);
   padding: 46px 40px;
+  background-color: $main__message__background-color;
+  overflow: scroll;
   .message {
-    margin-bottom: 40px;
+    padding-bottom: 40px;
       &__upper-info {
         display: flex;
         margin-bottom: 10px;
@@ -18,8 +20,11 @@
         }
       }
       &__text {
-        font-size: 14px;
+        font-size: 12px;
         color: $main__message-color;
+        p {
+          margin-bottom: 5px;
+        }
       }
   }
 }

@@ -1,8 +1,12 @@
 .messages
   .message
     .message__upper-info
-      %p.message__upper-info__talker ryousuke maehira
-      %p.message__upper-info__date  2019/10/02(Mon) 06:27:07
-    %p.message__text eachメソッドでメッセージを呼び出す
+      - messages.each do |message|
+        %p.message__upper-info__talker
+          = message.user.name
+        %p.message__upper-info__date
+          = message.created_at
+      %p.message__text
+
 
 

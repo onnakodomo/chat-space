@@ -1,10 +1,11 @@
 .form
-  %form#new_message.new_message
+  = form_for [ group, message ], id: "new_message" do |f|
     .input-box
-      %input.input-box__text{ type: "text", placeholder: "type a message" }
-      %label.input-box__image
-        =fa_icon "image"
-        %input#message_image.input-box__image__file{ type: "file" }
-    %input.submit_btn{ value: "Send" ,type: "submit" }
+      = f.text_field :body, placeholder: "type a message" , class: "input-box__text"
+      = f.label :image, class: "input-box__image" do
+        = fa_icon "image"
+        = f.file_field :image, class: "input-box__image__file"
+    = f.submit "Send", class: "submit_btn"
+
 
 

@@ -1,5 +1,5 @@
 .groups {
-  height: 100%;
+  height: calc(100% - 100px);
   background-color: $side__groups__background-color;
   padding: 0 20px;
   .group {

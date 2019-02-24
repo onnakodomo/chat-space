@@ -1,8 +1,9 @@
 .messages {
-  height: calc( 100% - 190px);
+  height: calc( 100vh - 190px);
   padding: 46px 40px;
   background-color: $main__message__background-color;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   .message {
     padding-bottom: 40px;
       &__upper-info {

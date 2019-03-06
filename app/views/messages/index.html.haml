@@ -4,6 +4,9 @@
     = render partial: "body/side_header"
     = render partial: "body/side_groups"
   .chat-main
+    / 紐づく予定のmessagesの変数引き渡し
     = render partial: "body/main_header",   locals: { group: @group, messages: @messages }
+    / 紐づく予定のmessagesの変数引き渡し
     = render partial: "body/main_messages", locals: { group: @group, messages: @messages }
-    = render partial: "body/main_form",     locals: { message: @onnakodomo , group: @group}
+    / 新規messages作成の為、messageの新規インスタンスと、紐づく予定のgroupの変数引き渡し
+    = render partial: "body/main_form",     locals: { group: @group, message: @message }

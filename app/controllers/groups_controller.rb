@@ -1,11 +1,15 @@
 class GroupsController < ApplicationController
 
+
   before_action :set_group, only: [ :edit, :update ]
 
+  # rootパスで設定したindex画面はsidebar表示のみ/
+  # 変数は引き渡しておらずcurrent_userで参照
   def index
   end
 
   def new
+    # 新規grouo作成の為に新規インスタンス生成/form＿forに引き渡す
     @group = Group.new
   end
 

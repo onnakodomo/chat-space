@@ -5,6 +5,7 @@ class Group < ApplicationRecord
   validates :name, presence: true
 
   def show_last_message
+    # selfが省略されていた!!
     if (last_message = messages.last).present?
       last_message.body? ? last_message.body :  '画像が投稿されています'
     else

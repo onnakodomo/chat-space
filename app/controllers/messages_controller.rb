@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_action :set_group
 
+  # 特定のgroupに紐すくmessages表示と、新規messagesの為の変数生成
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)

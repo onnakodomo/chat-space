@@ -2,6 +2,12 @@ $(function (){
 
 // htmlに適用するメソッド
 function buildHTML(message) {
+  // 三項演算子で messageのimageを振り分けていく。
+  var text  = (message.body)  ? message.body  : "";
+  var image = (message.image) ? message.image : "";
+  console.log(text)
+  console.log(image)
+
   var html =`<div class="message">
               <div class="message__upper-info">
                 <p class="message__upper-info__talker">
@@ -12,25 +18,11 @@ function buildHTML(message) {
                 </p>
               </div>
               <div class="message__text">
-                <p></p>
-                <img src="">
+                <p>${ text }</p>
+                <img src="${ image }">
               </div>
             </div>`
   $(".messages").append(html);
-
-  var body = message.body
-  var image =  message.image
-
-  if ( body !== ""  &&  image !== "" ) {
-    $(".message__text p").last().text( body )
-    $( ".message__text img" ).last().attr("src", image )
-  } else {
-    if ( body !== "" ) {
-      $(".message__text p").last().text(body)
-    } else {
-      $(".message__text img" ).last().attr("src", image )
-    }
-  }
 }
 
 // スクロールさせる関数

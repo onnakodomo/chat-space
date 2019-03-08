@@ -25,7 +25,7 @@ function buildSendMessageHTML(message) {
 }
 
 // スクロールさせる関数
-function ToLastMessageHTML(){
+function scrollToLastMessageHTML(){
   $('.messages').animate({
     scrollTop: $('.messages')[0].scrollHeight })
 }
@@ -49,9 +49,9 @@ function UnlockDisabledForm(){
       processData: false,
       contentType: false
     })
-    .done(function(message) {
-      buildSendMessageHTML(message);
-      ToLastMessageHTML();
+    .done(function(send_message) {
+      buildSendMessageHTML(send_message);
+      scrollToLastMessageHTML();
       UnlockDisabledForm();
       $(".input-box__text").val('');
       $(".input-box__image__file").val('');

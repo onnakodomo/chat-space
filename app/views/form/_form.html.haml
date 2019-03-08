@@ -5,12 +5,14 @@
       %ul
         - group.errors.full_messages.each do |message|
           %li= message
-
+  /ここがgroup編集機能画面の入力欄となる
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       = f.label :name, "グループ名", class: "chat-group-form__field__label"
     .chat-group-form__field--right
       = f.text_field :name, placeholder: "グループ名を入力してください", class: "chat-group-form__field__input"
+
+
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left

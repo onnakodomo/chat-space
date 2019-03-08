@@ -1,12 +1,11 @@
 $(function (){
 
 // htmlに適用するメソッド
-function buildHTML(message) {
+function buildSendMessageHTML(message) {
   // 三項演算子で messageのimageを振り分けていく。
   var text  = (message.body)  ? message.body  : "";
   var image = (message.image) ? message.image : "";
-  console.log(text)
-  console.log(image)
+
 
   var html =`<div class="message">
               <div class="message__upper-info">
@@ -26,7 +25,7 @@ function buildHTML(message) {
 }
 
 // スクロールさせる関数
-function scrollHTML(){
+function ToLastMessageHTML(){
   $('.messages').animate({
     scrollTop: $('.messages')[0].scrollHeight })
 }
@@ -50,9 +49,9 @@ function UnlockDisabledForm(){
       processData: false,
       contentType: false
     })
-    .done(function(data) {
-      buildHTML(data);
-      scrollHTML();
+    .done(function(message) {
+      buildSendMessageHTML(message);
+      ToLastMessageHTML();
       UnlockDisabledForm();
       $(".input-box__text").val('');
       $(".input-box__image__file").val('');

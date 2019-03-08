@@ -1,4 +1,15 @@
 class UsersController < ApplicationController
+  # 取得した情報をもとにuserの検索
+  # 帰ってきたパスを選り分け
+  def index
+    # usersテーブルから、入力された文字から始まるnicknameを取得
+    @users = User.where('nickname LIKE(?)', "#{params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json
+    end
+
+  end
 
   def edit
   end
@@ -12,7 +23,6 @@ class UsersController < ApplicationController
   end
 
   private
-
   def user_params
     params.require(:user).permit(:name, :email)
   end

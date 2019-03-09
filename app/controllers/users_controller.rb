@@ -1,18 +1,17 @@
 class UsersController < ApplicationController
-  # 取得した情報をもとにuserの検索
-  # 帰ってきたパスを選り分け
+
   def index
-    # usersテーブルから、入力された文字から始まるnicknameを取得
-    @users = User.where('nickname LIKE(?)', "#{params[:keyword]}%")
+    @users = User.where('name LIKE(?)', "#{params[:keyword]}%")
     respond_to do |format|
       format.html
       format.json
     end
-
   end
+
 
   def edit
   end
+
 
   def update
     if current_user.update(user_params)
@@ -21,6 +20,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
 
   private
   def user_params

@@ -5,20 +5,42 @@
       %ul
         - group.errors.full_messages.each do |message|
           %li= message
-  /ここがgroup編集機能画面の入力欄となる
+
+
+  / 1段目
   .chat-group-form__field.clearfix
+    / 左側「グループ名」と表示
     .chat-group-form__field--left
       = f.label :name, "グループ名", class: "chat-group-form__field__label"
+    / 右側
     .chat-group-form__field--right
       = f.text_field :name, placeholder: "グループ名を入力してください", class: "chat-group-form__field__input"
 
 
 
   .chat-group-form__field.clearfix
+
+    .chat-group-form__field--left
+      = f.label "チャットメンバーを追加", class: "chat-group-form__field__label"
+
+    .chat-group-form__field--right
+      .chat-group-form__field--right--search.clearfix
+
+        %input#user-search-field.chat-group-form__field__input{ placeholder:"追加したいユーザー名を入力してください", type: "text", name: "keyword"}
+      #user-search-result
+
+
+
+
+  / 3段目
+  .chat-group-form__field.clearfix
+    / 左側「チャットメンバー」と表示
     .chat-group-form__field--left
       = f.label  "チャットメンバー", class: "chat-group-form__field__label"
+    / 右側 「チェックボックス」→変更要
     .chat-group-form__field--right
       = f.collection_check_boxes :user_ids, User.all, :id, :name
+
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left

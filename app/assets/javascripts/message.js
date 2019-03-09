@@ -41,6 +41,7 @@ function UnlockDisabledForm(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = window.location.href
+    console.log(url)
     $.ajax({
       type:       'POST',
       url:           url,

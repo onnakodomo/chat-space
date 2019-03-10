@@ -28,7 +28,7 @@ $(function(){
   function ajaxSearchUser(input){
     $.ajax({
       type: 'GET',
-      url: '/users',
+      url: '/users.json',
       data: { keyword: input },
       dataType: 'json'
     })

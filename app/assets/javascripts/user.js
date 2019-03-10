@@ -8,10 +8,12 @@ $(function(){
   function searchMemberToHTML(member){
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name"> ${ member.name } </p>
-                  <a href="" class="chat-group-user__btn--add" data-user-id="${ member.id }" data-user-name=" ${member.name } ">追加</a>
+                  <a href="" class="chat-group-user__btn--add" data-user-id="${ member.id }" data-user-name= "${member.name }"" >追加</a>
                 </div>`
-    searchresult.append(html);;
+    console.log( member.id )
+    searchresult.append(html);
   }
+
 
   // 該当するメンバーなし
   function noMemberToHTML(msg){
@@ -46,6 +48,7 @@ $(function(){
     })
   }
 
+
   // 検索結果を削除
   function deleteSearchResult(){
     $("#user-search-result").empty();
@@ -62,5 +65,13 @@ $(function(){
     } else {
       deleteSearchResult();
     }
+  });
+
+  // 「追加」ボタンを押した時
+  $(document).on("click",".chat-group-user__btn--add",function(){
+    var userId = $(".chat-group-user__btn--add").attr("data-user-id");
+    var userName = $(".chat-group-user__btn--add").attr("data-user-name");
+    console.log(userId)
+    console.log(userName)
   });
 });

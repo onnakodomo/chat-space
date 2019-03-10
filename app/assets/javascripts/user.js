@@ -23,7 +23,7 @@ $(function(){
 
 
   // Avax通信
-  function ajaxSearchMember(input){
+  function ajaxSearchUser(input){
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -57,7 +57,7 @@ $(function(){
     var input = $("#user-search-field").val();
     // 入力した値が0でないなら
     if ( input.length !== 0 ){
-      ajaxSearchMember(input);
+      ajaxSearchUser(input);
     // 0なら検索結果を消去
     } else {
       deleteSearchResult();

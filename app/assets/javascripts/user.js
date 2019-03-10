@@ -8,7 +8,7 @@ $(function(){
   function searchMemberToHTML(member){
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name"> ${ member.name } </p>
-                  <a href="" class="chat-group-user__btn--add" >追加</a>
+                  <a href="" class="chat-group-user__btn--add" data-user-id="${ member.id }" data-user-name=" ${member.name } ">追加</a>
                 </div>`
     searchresult.append(html);;
   }

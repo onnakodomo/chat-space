@@ -8,14 +8,10 @@ class GroupsController < ApplicationController
   def index
   end
 
-
-
   def new
     # 新規grouo作成の為に新規インスタンス生成/form＿forに引き渡す
     @group = Group.new
   end
-
-
 
   def create
     @group = Group.new(group_params)
@@ -26,8 +22,6 @@ class GroupsController < ApplicationController
     end
   end
 
-
-
   def update
     if @group.update(group_params)
       redirect_to  group_messages_path(@group), notice: 'グループを編集しました'
@@ -35,8 +29,6 @@ class GroupsController < ApplicationController
       render :edit
     end
   end
-
-
 
 
   private

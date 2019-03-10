@@ -29,13 +29,6 @@
     &--right {
       float: right;
       width: 70%;
-      &--search{
-        &:after {
-        content: "";
-        clear: both;
-        display: block;
-      }
-      }
     }
     &__label {
       display: block;
@@ -49,11 +42,6 @@
       line-height: 30px;
       padding: 10px 15px;
       box-sizing: border-box;
-      &:after {
-        content: "";
-        clear: both;
-        display: block;
-    }
     }
   }
 
@@ -65,27 +53,3 @@
     border: 0;
   }
 }
-
-
-// 追加されていくメンバーの表示
-.chat-group-user {
-  border-bottom: 1px solid #dddddd;
-  padding: 0 15px;
-  line-height:  50px;
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
-  }
-  &__name {
-    font-size: 14px;
-    float: left;
-  }
-  &__btn--add {
-    font-size: 13px;float: right;
-    color: #38aef0;
-    float: right;
-  }
-}
-
-

@@ -2,20 +2,61 @@ $(function(){
 
 
   var searchresult = $("#user-search-result")
-  var addmemberHTML = $(".chat-group-form__field--right_bottom")
+  var chatmemberHTML = $(".chat-group-form__field--right--add--member")
 
 
-// 検索結果の表示
-  function searchMemberToHTML(member){
+  function addMember(addMember){
+    var addUserId = addMember.attr("data-user-id");
+    var addUserName = addMember.attr("data-user-name");
+    addMemberToChat( addUserId, addUserName );
+    deleteSelectMember( addMember );
+  }
+
+  function addMemberToChat( addUserId, addUserName ){
     var html = `<div class="chat-group-user clearfix">
-                  <p class="chat-group-user__name"> ${ member.name } </p>
-                  <a href="" class="chat-group-user__btn--add" data-user-id="${ member.id }" data-user-name= "${member.name }"" >追加</a>
+                  <input name='group[user_ids][]' type='hidden' value=' ${ addUserId }'>
+                  <p class='chat-group-user__name'> ${ addUserName } </p>
+                  <a class="chat-group-user__btn--remove" data-user-id="${ addUserId }" data-user-name= "${ addUserName }">削除</a>
+                </div>`
+    chatmemberHTML.append(html);
+  }
+
+  function deleteSelectMember(Member){
+    var parentSelectMemberHTML = Member.parent();
+    parentSelectMemberHTML.remove();
+  }
+
+
+
+
+  function deleteMember(deleteMember){
+    var deleteMemberId = deleteMember.attr("data-user-id");
+    var deleteMemberName = deleteMember.attr("data-user-name");
+    deleteMemberReturnToSearchResultHTML( deleteMemberId, deleteMemberName )
+    deleteSelectMember( deleteMember );
+  }
+
+  function deleteMemberReturnToSearchResultHTML( MemberId, MemberName ){
+    var html = `<div class="chat-group-user" clearfix">
+                  <p class="chat-group-user__name"> ${ MemberName } </p>
+                  <a class="chat-group-user__btn--add" data-user-id="${ MemberId }" data-user-name= "${ MemberName }" >追加</a>
                 </div>`
     searchresult.append(html);
   }
 
 
-  // 該当するメンバーなし
+
+
+  // 検索結果
+  function searchMemberToHTML(member){
+    var html = `<div class="chat-group-user" clearfix">
+                  <p class="chat-group-user__name"> ${ member.name } </p>
+                  <a class="chat-group-user__btn--add" data-user-id="${ member.id }" data-user-name= "${ member.name }" >追加</a>
+                </div>`
+    searchresult.append(html);
+  }
+
+
   function noMemberToHTML(msg){
     var html =  `<div class="chat-group-user clearfix">
                     <p class="chat-group-user__name"> ${ msg } </p>
@@ -23,8 +64,12 @@ $(function(){
     searchresult.append(html);
   }
 
+  function deleteSearchResult(){
+    $("#user-search-result").empty();
+  }
 
-  // Avax通信
+
+
   function ajaxSearchUser(input){
     $.ajax({
       type: 'GET',
@@ -49,51 +94,26 @@ $(function(){
   }
 
 
-
-  // 検索結果を削除
-  function deleteSearchResult(){
-    $("#user-search-result").empty();
-  }
-
-
-  // 追加ボタンを押した後、HTMLを消去
-  function deleteAddMemberAfterClick(){
-      $("chat-group-user").empty();
-  }
-
-  // 追加するメンバーを「チャットメンバーの横に配置」
-  function addMemberToChatMemberHTML( addUserId, addUserName ){
-    var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
-                  <input name='group[user_ids][]' type='hidden' value=' ${ addUserId }'>
-                  <p class='chat-group-user__name'>${ addUserName }</p>
-                  <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
-                </div>`
-                console.log(addUserId);
-                console.log(addUserName );
-    addmemberHTML.append(html);
-  }
-
-
-
-
   // イベント発火地点
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
-    // 入力した値が0でないなら
     if ( input.length !== 0 ){
       ajaxSearchUser(input);
-    // 0なら検索結果を消去
     } else {
       deleteSearchResult();
     }
   });
 
-  // 「追加」ボタンを押した時
+// 「追加」ボタンを押した時
   $(document).on("click",".chat-group-user__btn--add",function(){
-    var addUserId = $(".chat-group-user__btn--add").attr("data-user-id");
-    var addUserName = $(".chat-group-user__btn--add").attr("data-user-name");
-    deleteAddMemberAfterClick();
-    addMemberToChatMemberHTML( addUserId, addUserName );
+    var selectMember = $(this)
+    addMember(selectMember);
+  });
+
+  // 「削除」ボタンを押した時
+  $(document).on("click",".chat-group-user__btn--remove",function(){
+    var selectMember = $(this)
+    deleteMember(selectMember);
   });
 });
 

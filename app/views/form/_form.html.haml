@@ -6,34 +6,37 @@
         - group.errors.full_messages.each do |message|
           %li= message
 
-
   / 1段目
   .chat-group-form__field.clearfix
-    / 左側「グループ名」と表示
     .chat-group-form__field--left
       = f.label :name, "グループ名", class: "chat-group-form__field__label"
-    / 右側
     .chat-group-form__field--right
-      = f.text_field :name, placeholder: "グループ名を入力してください", class: "chat-group-form__field__input"
+      = f.text_field :name, placeholder: "グループ名を入力してください", class: "chat-group-form__field--right__input"
 
-
+  / 2段目
   .chat-group-form__field.clearfix
-
     .chat-group-form__field--left
       = f.label "チャットメンバーを追加", class: "chat-group-form__field__label"
-
     .chat-group-form__field--right
       .chat-group-form__field--right--search.clearfix
-        %input#user-search-field.chat-group-form__field__input{ placeholder:"追加したいユーザー名を入力してください", type: "text", name: "keyword"}
+        %input#user-search-field.chat-group-form__field--right--search__input{ placeholder:"追加したいユーザー名を入力してください", type: "text", name: "keyword"}
       #user-search-result
 
   / 3段目
   .chat-group-form__field.clearfix
-    / 左側「チャットメンバー」と表示
     .chat-group-form__field--left
       = f.label  "チャットメンバー", class: "chat-group-form__field__label"
-    / 右側 「チェックボックス」→変更要
-    .chat-group-form__field--right
+    .chat-group-form__field--right--add--member
+      - group.users.each do |user|
+        .chat-group-user.clearfix
+          %input{ name: "group[user_ids][]", type: "hidden", value: "#{user.id}" }
+          %p.chat-group-user__name
+            = user.name
+          %a.chat-group-user__btn--remove{ data: {user: {id: "#{user.id}" ,name: "#{user.name}"}}}削除
+
+
+
+
 
 
 

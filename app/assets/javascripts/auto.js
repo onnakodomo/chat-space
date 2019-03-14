@@ -41,7 +41,6 @@ $(function(){
       dataType: 'json'
       })
     .done(function(new_messages){
-      console.log(new_messages)
       if (new_messages.length !== 0){
         new_messages.forEach(function(new_message){
           autoNewMessageToHTML(new_message);

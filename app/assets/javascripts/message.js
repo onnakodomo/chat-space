@@ -50,8 +50,6 @@ $(function (){
       contentType: false
     })
     .done(function(send_message) {
-      var num = send_message.length
-      console.log(num)
       if (send_message.length !== 0){
         buildSendMessageHTML(send_message);
         scrollToLastMessageHTML();

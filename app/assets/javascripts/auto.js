@@ -1,6 +1,6 @@
 $(function(){
 
-  setInterval(autoUpdatemessages, 2000);
+  setInterval(autoUpdatemessages, 3000);
 
   function autoNewMessageToHTML(new_message){
 

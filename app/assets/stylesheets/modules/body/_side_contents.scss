@@ -1,7 +1,9 @@
 .groups {
-  height: calc(100% - 100px);
+  height: calc( 100vh );
   background-color: $side__groups__background-color;
   padding: 0 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
   .group {
     box-sizing: border-box;
     color: $side__font-color;

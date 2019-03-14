@@ -24,12 +24,12 @@ a {
   height: 100vh;
   width: 100vw;
   .chat-side {
-    height: 100vh;
+    height: calc(100vh - 190px);
     width: 300px;
     float: left;
   }
   .chat-main {
-  height: calc(100vh - 190px);
+  height: calc(100vh );
   width: calc(100vw - 300px);
   float: right;
   }

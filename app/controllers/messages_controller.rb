@@ -22,7 +22,9 @@ class MessagesController < ApplicationController
     else
       @messages = @group.messages.includes(:user)
       flash.now[:alert] = "メッセージを入力してください。"
+      # Ajax通信の場合、index.json.jbuilderが読み込まれる
       render :index
+      # redirect_to :index
     end
   end
 

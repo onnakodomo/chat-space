@@ -6,14 +6,13 @@ $(function (){
     var text  = (message.body)  ? message.body  : "";
     var image = (message.image) ? message.image : "";
 
-
-    var html =`<div class="message" data-message-id=${ message.id }>
+    var html =`<div class="message">
                 <div class="message__upper-info">
                   <p class="message__upper-info__talker">
                     ${ message.user_name }
                   </p>
                   <p class="message__upper-info__date">
-                    ${ message.created_at }
+                    ${ message.created_at}
                   </p>
                 </div>
                 <div class="message__text">
@@ -23,6 +22,7 @@ $(function (){
               </div>`
     $(".messages").append(html);
   }
+
 
   // スクロールさせる関数
   function scrollToLastMessageHTML(){
@@ -41,6 +41,7 @@ $(function (){
     e.preventDefault();
     var formData = new FormData(this);
     var url = window.location.href
+
     $.ajax({
       type:       'POST',
       url:           url,

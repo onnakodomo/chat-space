@@ -29,7 +29,6 @@ $(function(){
     scrollTop: $('.messages')[0].scrollHeight })
   }
 
-
   function autoUpdatemessages(){
     var lastMessageId = $('.message:last').attr('data-message-id');
     var url = window.location.href.match(/\/groups\/\d+\/messages/)
@@ -53,3 +52,4 @@ $(function(){
     })
   }
 });
+

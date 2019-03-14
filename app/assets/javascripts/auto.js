@@ -23,6 +23,7 @@ $(function(){
     $(".messages").append(html);
   }
 
+
   function scrollToLastMessageHTML(){
   $('.messages').animate({
     scrollTop: $('.messages')[0].scrollHeight })

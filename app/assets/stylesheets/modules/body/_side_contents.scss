@@ -1,5 +1,5 @@
 .groups {
-  height: calc( 100vh );
+  height: calc( 100vh - 100px);
   background-color: $side__groups__background-color;
   padding: 0 20px;
   overflow-y: scroll;

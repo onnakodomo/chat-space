@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'onnakodomo0618-chat-space'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/onnakodomo0618-chat-space'
+  config.asset_host = 'https://s3.amazonaws.com/onnakodomo0618-chat-space'
 end

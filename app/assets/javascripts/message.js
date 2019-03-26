@@ -6,7 +6,7 @@ $(function (){
     var text  = (message.body)  ? message.body  : "";
     var image = (message.image) ? message.image : "";
 
-    var html =`<div class="message">
+    var html =`<div class="message" data-message-id=${ message.id }>
                 <div class="message__upper-info">
                   <p class="message__upper-info__talker">
                     ${ message.user_name }

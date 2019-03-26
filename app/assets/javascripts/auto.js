@@ -1,6 +1,6 @@
 $(function(){
 
-  setInterval(autoUpdatemessages, 3000);
+  setInterval(autoUpdatemessages, 1000);
 
   function autoNewMessageToHTML(new_message){
 
@@ -31,6 +31,7 @@ $(function(){
 
   function autoUpdatemessages(){
     var lastMessageId = $('.message:last').attr('data-message-id');
+    console.log(lastMessageId )
     var url = window.location.href.match(/\/groups\/\d+\/messages/)
     var updateMatchUrl  = url[0]
     $.ajax({

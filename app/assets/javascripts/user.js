@@ -12,6 +12,7 @@ $(function(){
     deleteSelectMember( addMember );
   }
 
+
   function addMemberToChat( addUserId, addUserName ){
     var html = `<div class="chat-group-user clearfix">
                   <input name='group[user_ids][]' type='hidden' value=' ${ addUserId }'>

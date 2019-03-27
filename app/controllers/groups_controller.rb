@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
   def new
     # 新規grouo作成の為に新規インスタンス生成/form＿forに引き渡す
     @group = Group.new
+    # @group.users << current_user
   end
 
 

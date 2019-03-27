@@ -27,12 +27,17 @@
     .chat-group-form__field--left
       = f.label  "チャットメンバー", class: "chat-group-form__field__label"
     .chat-group-form__field--right--add--member
+      .chat-group-user.clearfix
+        %input{ name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}" }
+        %p.chat-group-user__name
+          = current_user.name
       - group.users.each do |user|
-        .chat-group-user.clearfix
-          %input{ name: "group[user_ids][]", type: "hidden", value: "#{user.id}" }
-          %p.chat-group-user__name
-            = user.name
-          %a.chat-group-user__btn--remove{ data: {user: {id: "#{user.id}" ,name: "#{user.name}"}}}削除
+        - if user != current_user
+          .chat-group-user.clearfix
+            %input{ name: "group[user_ids][]", type: "hidden", value: "#{user.id}" }
+            %p.chat-group-user__name
+              = user.name
+            %a.chat-group-user__btn--remove{ data: {user: {id: "#{user.id}" ,name: "#{user.name}"}}}削除
 
 
 
